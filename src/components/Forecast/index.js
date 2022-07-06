@@ -43,7 +43,7 @@ const Forecast = (props) => {
          
          {
             weather && weather < 19 ? 
-            <div>{time.map((t) =>console.log( t[weather]) )}</div> : ""
+            <div></div> : ""
          }
         </div>
         <div className="forecast-description">
