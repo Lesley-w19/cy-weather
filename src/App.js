@@ -1,17 +1,18 @@
 import "./App.css";
 import UilReact from "@iconscout/react-unicons/icons/uil-react";
-import Buttons from "./components/Buttons";
+// import Buttons from "./components/Buttons";
 import Inputs from "./components/Inputs";
-import TopDetails from "./components/TopDetails";
 import Forecast from "./components/Forecast";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 function App() {
   const [data, setData] = useState();
-  
-  const [longitude, setLongitude] = useState(13.41)
-  const [latitude, setLatitude] = useState(52.52)
+
+  const [longitude, setLongitude] = useState(0);
+  const [latitude, setLatitude] = useState(0);
+  const [temp, setTemp] = useState();
+
   useEffect(() => {
     const getWeather = async () => {
       try {
@@ -30,11 +31,17 @@ function App() {
   }, [longitude, latitude]);
 
   return (
-    <div className="App mt-4 py-5">
-      <Buttons setLongitude={setLongitude}  setLatitude={setLatitude}/>
-      <Inputs />
-      <TopDetails data={data} />
-      <Forecast data={data}/>
+    <div className="container mt-3 ">
+      <div className={`px-4 ${temp < 20 ? "cold" : "warm"}`}>
+        {/* <Buttons /> */}
+        <Inputs setLongitude={setLongitude} setLatitude={setLatitude} />
+        <Forecast
+          data={data}
+          longitude={longitude}
+          latitude={latitude}
+          setTemp={setTemp}
+        />
+      </div>
     </div>
   );
 }

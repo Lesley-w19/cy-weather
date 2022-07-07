@@ -3,14 +3,22 @@
   margin: 0;
   box-sizing: border-box;
 }
-.App{
-  margin: 0 auto;
-  max-width: 640px;
+
+.cold{
   background: linear-gradient(to bottom right,#0097A7 , #0288D1);
+  margin: 0 auto;
+  padding: 10px 15px;
   box-shadow: 0px 10px 10px gray;
   height: fit-content;
 }
+.warm{
+  background: linear-gradient(to bottom right,#FBC02D , #F57C00);
+  margin: 0 auto;
+  padding: 10px 15px;
 
+  box-shadow: 0px 10px 10px gray;
+  height: fit-content;
+}
 /* Buttons */
 .cities {
   width: 80%;
@@ -84,7 +92,7 @@ letter-spacing: 1px;
   margin: auto 0;
 }
 .forecast{
-  width: 80%;
+
   margin: 1px auto;
   border-bottom: 1px solid white;
 }
@@ -99,6 +107,7 @@ align-content: center;
 justify-content: center;
 }
 .forecast-description{
+  
   padding: 10px 15px;
   margin: 0 5px;
   display: flex;
@@ -107,7 +116,7 @@ justify-content: center;
   justify-content: center;
  color: white;
   text-align: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap !important;
   transition: all .2s ease-in;
   border: none;
   cursor: pointer;

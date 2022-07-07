@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const TopButtons = (props) => {
   const {setLatitude, setLongitude} = props;
@@ -21,6 +21,7 @@ const TopButtons = (props) => {
     },
   ];
 
+  const [city, setCity] = useState("")
 const handleClick = (e) =>{
   e.preventDefault();
   setLatitude(52.52)
